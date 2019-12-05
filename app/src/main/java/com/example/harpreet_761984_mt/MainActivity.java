@@ -3,16 +3,19 @@ package com.example.harpreet_761984_mt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
     EditText et_totalPayment;
     Button viewDetails;
     int temp = 0;
+    int days;
     boolean i_seek = true;
+    boolean check = false;
+
 
 
 
@@ -110,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
 
-
             }
 
             @Override
@@ -121,6 +126,50 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        radio_twenty.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (check == false){
+                    check = false;
+                }else {
+                    Toast.makeText(MainActivity.this, "Please select the age group", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        radio_plusTwenty.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (check == false){
+                    check = false;
+                }else {
+                    Toast.makeText(MainActivity.this, "Please select the age group", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        radio_sixty.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (check == false){
+                    check = false;
+                }else {
+                    Toast.makeText(MainActivity.this, "Please select the age group", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        gps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               if (gps.isChecked() || child.isChecked() || unlimited_millage.isChecked()){
+                   Toast.makeText(MainActivity.this, "selected", Toast.LENGTH_SHORT).show();
+               }else if(!gps.isChecked() && !child.isChecked() && !unlimited_millage.isChecked()) {
+                   Toast.makeText(MainActivity.this, "One of the options must be selected", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
