@@ -2,6 +2,7 @@ package com.example.harpreet_761984_mt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.FileUtils;
 import android.view.View;
@@ -178,5 +179,16 @@ public class MainActivity extends AppCompatActivity {
         if(spinner.getSelectedItem().toString().isEmpty() && seek_days.toString().isEmpty() && radio_twenty.toString().isEmpty() || radio_plusTwenty.toString().isEmpty() || radio_sixty.toString().isEmpty() && !gps.isChecked() || !child.isChecked() || !unlimited_millage.isChecked()){
             Toast.makeText(this, "Information is not completed.", Toast.LENGTH_SHORT).show();
         }
+
+        viewDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("car","days").getSerializableExtra("chooseAcar");
+                startActivity(intent);
+            }
+        });
     }
+
 }
