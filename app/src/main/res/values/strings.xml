@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Harpreet_761984_MT</string>
+    <string-array name="chooseAcar">
+        <item>Please choose a car</item>
+        <item>BMW</item>
+        <item>Audi</item>
+        <item>Mercedes</item>
+        <item>Porche</item>
+        <item>Ferrari</item>
+        <item>Peugeot</item>
+        <item>Challenger</item>
+        <item>Range Rover</item>
+    </string-array>
+</resources>
