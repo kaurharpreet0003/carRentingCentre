@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,5 +173,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        if(spinner.getSelectedItem().toString().isEmpty() && seek_days.toString().isEmpty() && radio_twenty.toString().isEmpty() || radio_plusTwenty.toString().isEmpty() || radio_sixty.toString().isEmpty() && !gps.isChecked() || !child.isChecked() || !unlimited_millage.isChecked()){
+            Toast.makeText(this, "Information is not completed.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
